@@ -12,12 +12,13 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: none; 
+    background: rgb(26, 25, 25); 
 }
 
 ::-webkit-scrollbar-thumb {
     background: #ff00bf;
     border-radius: 100vw;
+    box-shadow: inset 0 0 0.5em #ff00bf, 0 0 0.5em #ff00bf, 0 0 10px rgba(255, 255, 255, 0.3), 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -25,9 +26,13 @@
 }
 
 body {
-    background: url(img/224212\ \(1\).jpg) no-repeat;
+    background: url(img/backgruond/224212\ \(1\).jpg) no-repeat fixed;
     background-size: cover;
     background-position: center;
+    height: 100vh;
+}
+
+.home-page {
     height: 100vh;
 }
 
@@ -48,12 +53,40 @@ header{
     z-index: 999;
 }
 
-header .logo .logo-img{
+header .logo .logo-Lamborghini{
     width: 55px;
     transition: 0.7s ease;
+    animation: change  13s  infinite ease-in-out;
 }
 
-header .logo .logo-img:hover {
+@keyframes change {
+    0%
+    {
+        content: url(img/logo/logo-car-2.png);
+    }
+    20%
+    {
+        content: url(img/logo/logo-car-3.png);
+    }
+    40%
+    {
+        content: url(img/logo/logo-car-4.png);
+    }
+    60%
+    {
+        content: url(img/logo/logo-car-5.png);
+    }
+    80%
+    {
+        content: url(img/logo/logo-car.png);
+    }
+    100%
+    {
+        content: url(img/logo/logo-car-2.png);
+    }
+}
+
+header .logo .logo-Lamborghini:hover {
     transform: scale(1.2);
 }
 
@@ -66,7 +99,6 @@ header .logo a h3{
     font-size: 1.3em;
     font-family: 'Caveat', cursive;
 }
-
 
 header .logo a h3:hover{
     color: #d4ad11;
@@ -206,4 +238,65 @@ header .nav a:hover{
     box-shadow: inset 0 0 0.5em #ff00bf, 0 0 1.5em #ff00bf, 0 0 10px rgba(255, 255, 255, 0.3), 0 0 15px rgba(255, 255, 255, 0.3);
     transition: all 1s linear;
     height: 100%;
+}
+
+.home-car {
+    display: flex;
+    /* background-color: rgb(36, 35, 35); */
+    height: 100vh;
+    background: hsla(197, 100%, 63%, 1);
+
+    background: linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
+
+    background: -moz-linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
+
+    background: -webkit-linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
+
+    box-shadow: inset 0 0 0.5em #d500a0, 0 0 1.5em #d500a0, 0 0 10px rgba(255, 255, 255, 0.3), 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.home-car .car {
+    display: inline;
+    width: 100%;
+}
+
+.home-car .car img {
+    width: 50em;
+    margin: 250px 0 0 0;
+}
+
+.home-car .description {
+    display: inline;
+    border: black solid 2px;
+    width: 100%;
+    height: 35em;
+    margin-top: 70px;
+    margin-left: 5px;
+    margin-right: 40px;
+    box-shadow: 0 10px 35px rgb(22, 21, 21);
+    border-radius: 15px;
+}
+
+.home-car .description h1 {
+    padding: 1.3em 0 1.3em  3.6em;
+    font-size: 2.5em;
+    color: #eec81b;
+    text-shadow: 0 0 10px #eec81b, 0 0 20px #eec81b, 0 0 40px #eec81b, 0 0 80px #eec81b, 0 0 120px #eec81b;
+}
+
+.home-car .description h1 span {
+    color: #011a1a;
+    text-shadow: 0 0 10px #00dddd, 0 0 20px #00dddd, 0 0 40px #00dddd, 0 0 80px #00dddd, 0 0 120px #00dddd;
+}
+
+.home-car .description h3 {
+    font-size: 1.4em;
+    width: 77%;
+    margin-left: 4em;
+    color: white;
+    transition: 0.7s ease;
+}
+
+.home-car .description h3:hover {
+    text-shadow: 0 0 10px white, 0 0 17px white;
 }
