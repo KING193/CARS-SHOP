@@ -62,27 +62,27 @@ header .logo .logo-Lamborghini{
 @keyframes change {
     0%
     {
-        content: url(img/logo/logo-car-2.png);
+        content: url(img/Logo/logo-car-2.png);
     }
     20%
     {
-        content: url(img/logo/logo-car-3.png);
+        content: url(img/Logo/logo-car-3.png);
     }
     40%
     {
-        content: url(img/logo/logo-car-4.png);
+        content: url(img/Logo/logo-car-4.png);
     }
     60%
     {
-        content: url(img/logo/logo-car-5.png);
+        content: url(img/Logo/logo-car-5.png);
     }
     80%
     {
-        content: url(img/logo/logo-car.png);
+        content: url(img/Logo/logo-car.png);
     }
     100%
     {
-        content: url(img/logo/logo-car-2.png);
+        content: url(img/Logo/logo-car-2.png);
     }
 }
 
