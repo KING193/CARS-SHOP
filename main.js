@@ -3,7 +3,7 @@ let progress = document.getElementById("progress");
 let playerbtn = document.getElementById("playbtn");
 
 var playpause = function() {
-    if(player.paused) {
+    if (player.paused) {
         player.play();
     } else {
         player.pause();
@@ -27,17 +27,17 @@ player.ontimeupdate = function() {
     current.innerHTML = timeFormat(ct);
 
     let duration = player.duration;
-    prog = Math.floor((ct*100)/duration)
-    progress.style.setProperty("--progress", prog+"%")
+    prog = Math.floor((ct * 100) / duration)
+    progress.style.setProperty("--progress", prog + "%")
 }
 
 function timeFormat(ct) {
-    minutes = Math.floor(ct/60)
-    seconds = Math.floor(ct%60)
+    minutes = Math.floor(ct / 60)
+    seconds = Math.floor(ct % 60)
 
-    if(seconds < 10) {
+    if (seconds < 10) {
         seconds = "0" + seconds
     }
 
-    return minutes+":"+seconds
+    return minutes + ":" + seconds
 }
