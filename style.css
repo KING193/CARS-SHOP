@@ -26,6 +26,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
 }
 
 body {
@@ -33,6 +34,7 @@ body {
     background-size: cover;
     background-position: center;
     height: 100vh;
+    scroll-snap-align: center;
 }
 
 .home-page {
@@ -56,7 +58,7 @@ header {
     z-index: 999;
 }
 
-header .logo .logo-Lamborghini {
+header .logo a .logo-Lamborghini {
     width: 55px;
     transition: 0.7s ease;
     animation: change 13s infinite ease-in-out;
@@ -83,7 +85,7 @@ header .logo .logo-Lamborghini {
     }
 }
 
-header .logo .logo-Lamborghini:hover {
+header .logo a .logo-Lamborghini:hover {
     transform: scale(1.2);
 }
 
@@ -240,28 +242,28 @@ header .nav a:hover {
 
 .home-car {
     display: flex;
-    /* background-color: rgb(36, 35, 35); */
     height: 100vh;
     background: hsla(197, 100%, 63%, 1);
     background: linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
     background: -moz-linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
     background: -webkit-linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
     box-shadow: inset 0 0 0.5em #d500a0, 0 0 1.5em #d500a0, 0 0 10px rgba(255, 255, 255, 0.3), 0 0 15px rgba(255, 255, 255, 0.3);
+    scroll-snap-align: center;
 }
 
-#Product .car {
+.Product .car {
     overflow: hidden;
     width: 120em;
 }
 
-#Product .car figure {
+.Product .car figure {
     position: relative;
     width: 500%;
     left: 0;
     animation: 15s infinite slider;
 }
 
-#Product .car figure img {
+.Product .car figure img {
     width: 20%;
     float: left;
     margin: 250px 0 0 0;
@@ -317,8 +319,26 @@ header .nav a:hover {
 }
 
 .home-car .description h1 span {
-    color: #011a1a;
-    text-shadow: 0 0 10px #00dddd, 0 0 20px #00dddd, 0 0 40px #00dddd, 0 0 80px #00dddd, 0 0 120px #00dddd;
+    color: #f7f7f7;
+    text-shadow: 0 0 10px #cacaca, 0 0 20px #cacaca, 0 0 40px #cacaca, 0 0 80px #cacaca, 0 0 120px #cacaca;
+    animation: 1s infinite Huracan;
+}
+
+@keyframes Huracan {
+    0% {
+        color: #313131;
+        text-shadow: 0 0 10px #232323, 0 0 20px #232323, 0 0 40px #232323, 0 0 80px #232323, 0 0 120px #232323;
+    }
+
+    50% {
+        color: #f7f7f7;
+        text-shadow: 0 0 10px #cacaca, 0 0 20px #cacaca, 0 0 40px #cacaca, 0 0 80px #cacaca, 0 0 120px #cacaca;
+    }
+
+    100% {
+        color: #313131;
+        text-shadow: 0 0 10px #232323, 0 0 20px #232323, 0 0 40px #232323, 0 0 80px #232323, 0 0 120px #232323;
+    }
 }
 
 .home-car .description h3 {
@@ -341,10 +361,9 @@ header .nav a:hover {
 .home-car .description .D2 h2 {
     display: flex;
     color: #26ff00;
-    font-size: 2em;
-    margin: 40px 0 0 20px;
+    font-size: 2.3em;
+    margin: 30px 0 0 20px;
     text-shadow: 0 0 10px #26ff00, 0 0 20px #26ff00, 0 0 40px #26ff00, 0 0 80px #26ff00, 0 0 120px #26ff00;
-    transition: 0.6s ease;
 }
 
 .buy_star {
@@ -353,26 +372,25 @@ header .nav a:hover {
 }
 
 .home-car .description .D2 a {
-    width: 270px;
+    margin: 50px 0 0 0;
 }
 
 .home-car .description .D2 a button {
     font-size: 1.5em;
     font-weight: 700;
-    margin: 50px 0 0 0;
     padding: 20px 40px;
     border-radius: 15px;
     cursor: pointer;
     border: none;
-    background-color: #eec81b;
-    box-shadow: 0 0 10px #eec81b, 0 0 20px #eec81b, 0 0 40px #eec81b, 0 0 80px #eec81b, 0 0 120px #eec81b;
+    background-color: #9250fc;
+    box-shadow: 0 0 10px #8a43fd, 0 0 20px #8a43fd, 0 0 40px #8a43fd, 0 0 80px #8a43fd;
     transition: 0.7s ease;
 }
 
 .home-car .description .D2 a button:hover {
-    background-color: #ffff00;
-    transform: scale(1.2);
-    box-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00, 0 0 40px #ffff00, 0 0 80px #ffff00, 0 0 120px #ffff00;
+    background-color: #7928fc;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #7928fc, 0 0 20px #7928fc, 0 0 40px #7928fc, 0 0 80px #7928fc, 0 0 120px #7928fc;
 }
 
 .star {
@@ -390,3 +408,56 @@ header .nav a:hover {
     text-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00, 0 0 40px #ffff00, 0 0 80px #ffff00, 0 0 120px #ffff00;
     font-size: 2.3em;
 }
+
+#car-2 {
+    scroll-snap-align: center;
+    background: hsla(333, 100%, 53%, 1);
+
+    background: linear-gradient(90deg, hsla(333, 100%, 53%, 1) 0%, hsla(33, 94%, 57%, 1) 100%);
+
+    background: -moz-linear-gradient(90deg, hsla(333, 100%, 53%, 1) 0%, hsla(33, 94%, 57%, 1) 100%);
+
+    background: -webkit-linear-gradient(90deg, hsla(333, 100%, 53%, 1) 0%, hsla(33, 94%, 57%, 1) 100%);
+    box-shadow: inset 0 0 0.5em #f58c36, 0 0 1.5em #f58c36, 0 0 10px rgba(255, 255, 255, 0.3), 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.car-3 {
+    scroll-snap-align: center;
+    background: hsla(217, 100%, 50%, 1);
+
+    background: linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
+
+    background: -moz-linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
+
+    background: -webkit-linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
+    box-shadow: inset 0 0 0.5em #67dff9, 0 0 1.5em #67dff9, 0 0 10px rgba(255, 255, 255, 0.3), 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+#car-4 {
+    scroll-snap-align: center;
+    background: hsla(33, 100%, 53%, 1);
+
+    background: linear-gradient(90deg, hsla(33, 100%, 53%, 1) 0%, hsla(58, 100%, 68%, 1) 100%);
+
+    background: -moz-linear-gradient(90deg, hsla(33, 100%, 53%, 1) 0%, hsla(58, 100%, 68%, 1) 100%);
+
+    background: -webkit-linear-gradient(90deg, hsla(33, 100%, 53%, 1) 0%, hsla(58, 100%, 68%, 1) 100%);
+    box-shadow: inset 0 0 0.5em #fbe262, 0 0 1.5em #fbe262, 0 0 10px rgba(255, 255, 255, 0.3), 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+#car-4 h1 {
+    color: #ffa500;
+    text-shadow: 0 0 10px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 80px #ffa500, 0 0 120px #ffa500; 
+}
+
+#car-5 {
+    scroll-snap-align: center;
+    background: hsla(339, 100%, 55%, 1);
+
+    background: linear-gradient(90deg, hsla(339, 100%, 55%, 1) 0%, hsla(197, 100%, 64%, 1) 100%);
+
+    background: -moz-linear-gradient(90deg, hsla(339, 100%, 55%, 1) 0%, hsla(197, 100%, 64%, 1) 100%);
+
+    background: -webkit-linear-gradient(90deg, hsla(339, 100%, 55%, 1) 0%, hsla(197, 100%, 64%, 1) 100%);
+    box-shadow: inset 0 0 0.5em #4ec2fa, 0 0 1.5em #4ec2fa, 0 0 10px rgba(255, 255, 255, 0.3), 0 0 15px rgba(255, 255, 255, 0.3);
+    }
