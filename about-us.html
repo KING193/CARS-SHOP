@@ -1,116 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CARS SHOP</title>
 
     <style>
-        
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
-
-        *{
+        * {
             font-family: 'Poppins', sans-serif;
-            margin:0; padding:0;
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
-            outline: none; border:none;
+            outline: none;
+            border: none;
             text-transform: capitalize;
             transition: all .2s linear;
         }
-
-        .container{
+        
+        .container {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding:25px;
+            padding: 25px;
             min-height: 100vh;
-            background: linear-gradient(155deg, #ff007b 50%, #df006c 50%);
+            background: linear-gradient(155deg, #2c2c2c 50%, #1d1d1d 50%);
         }
-
-        .container form{
-            padding:20px;
-            width:700px;
-            background: #fff;
+        
+        .container form {
+            padding: 20px;
+            width: 700px;
+            background: #3d3d3d;
             border-radius: 25px;
             box-shadow: 0 5px 10px black;
         }
-
-        .container form .row{
+        
+        .container form .row {
             display: flex;
             flex-wrap: wrap;
-            gap:15px;
+            gap: 15px;
         }
-
-        .container form .row .col{
-            flex:1 1 250px;
+        
+        .container form .row .col {
+            flex: 1 1 250px;
         }
-
-        .container form .row .col .title{
+        
+        .container form .row .col .title {
             font-size: 20px;
-            color:#333;
+            color: #333;
             padding-bottom: 5px;
             text-transform: uppercase;
         }
-
-        .container form .row .col .inputBox{
-            margin:15px 0;
+        
+        .container form .row .col .inputBox {
+            margin: 15px 0;
         }
-
-        .container form .row .col .inputBox span{
+        
+        .container form .row .col .inputBox span {
             margin-bottom: 10px;
             display: block;
         }
-
-        .container form .row .col .inputBox input{
+        
+        .container form .row .col .inputBox input {
             width: 100%;
-            border:1px solid #ccc;
-            padding:10px 15px;
+            border: 1px solid #1d1d1d;
+            background-color: #2c2c2c;
+            padding: 10px 15px;
             font-size: 15px;
             text-transform: none;
+            color: #ff00bf;
         }
-
-        .container form .row .col .inputBox input:focus{
-            border:1px solid #000;
+        
+        .container form .row .col .inputBox input:focus {
+            border: 1px solid #ff00bf;
+            box-shadow: inset 0 0 0.5em #ff00bf, 0 0 0.5em #ff00bf, 0 0 10px rgba(255, 255, 255, 0.3), 0 0 15px rgba(255, 255, 255, 0.3);
         }
-
-        .container form .row .col .flex{
+        
+        .container form .row .col .flex {
             display: flex;
-            gap:15px;
+            gap: 15px;
         }
-
-        .container form .row .col .flex .inputBox{
+        
+        .container form .row .col .flex .inputBox {
             margin-top: 5px;
         }
-
-        .container form .row .col .inputBox img{
+        
+        .container form .row .col .inputBox img {
             height: 34px;
             margin-top: 5px;
             filter: drop-shadow(0 0 1px #000);
         }
-
-        .container form .submit-btn{
+        
+        .container form .submit-btn {
             width: 100%;
-            padding:12px;
-            font-size: 17px;
-            background: #ff007b;
-            color:#fff;
+            padding: 12px;
+            font-weight: 500;
+            font-size: 20px;
+            box-shadow: inset 0 0 0.5em #ff00bf, 0 0 0.5em #ff00bf, 0 0 10px rgba(255, 255, 255, 0.3), 0 0 15px rgba(255, 255, 255, 0.3);
+            color: #333;
             margin-top: 5px;
             cursor: pointer;
             border-radius: 15px;
         }
-
-        .container form .submit-btn:hover{
-            background: #0092ff;
+        
+        .container form .submit-btn:hover {
+            background: #ff00bf;
         }
-
     </style>
 
 </head>
+
 <body>
-    
+
 </body>
 
-    
+
 <div class="container">
 
     <form action="">
@@ -157,7 +162,7 @@
 
                 <div class="inputBox">
                     <span>cards accepted :</span>
-                    <img src="images/card_img.png" alt="">
+                    <img src="img/card_img.png" alt="">
                 </div>
                 <div class="inputBox">
                     <span>name on card :</span>
@@ -184,7 +189,7 @@
                 </div>
 
             </div>
-    
+
         </div>
 
         <a href="https://www.google.com/" download class="btn-download"><input type="submit" value="proceed to checkout" class="submit-btn"></a>
@@ -194,44 +199,41 @@
     </form>
 
     <script>
+        const form = document.querySelector("form");
+        const notification = document.querySelector(".notification");
 
-            const form = document.querySelector("form");
-            const notification = document.querySelector(".notification");
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
 
-            form.addEventListener("submit", function(e) {
-                e.preventDefault();
+            const getValue = (selector) => form.querySelector(selector).value;
 
-                const getValue = (selector) => form.querySelector(selector).value;
+            const fullName = getValue('input[type="text"][placeholder="john deo"]');
+            const email = getValue('input[type="email"]');
+            const address = getValue('input[type="text"][placeholder="room - street - locality"]');
+            const city = getValue('input[type="text"][placeholder="mumbai"]');
+            const state = getValue('input[type="text"][placeholder="india"]');
+            const zipCode = getValue('input[type="text"][placeholder="123 456"]');
+            const nameOnCard = getValue('input[type="text"][placeholder="mr. john deo"]');
+            const creditCardNumber = getValue('input[type="number"]');
+            const expMonth = getValue('input[type="text"][placeholder="january"]');
+            const expYear = getValue('input[type="number"]');
+            const cvv = getValue('input[type="text"][placeholder="1234"]');
 
-                const fullName = getValue('input[type="text"][placeholder="john deo"]');
-                const email = getValue('input[type="email"]');
-                const address = getValue('input[type="text"][placeholder="room - street - locality"]');
-                const city = getValue('input[type="text"][placeholder="mumbai"]');
-                const state = getValue('input[type="text"][placeholder="india"]');
-                const zipCode = getValue('input[type="text"][placeholder="123 456"]');
-                const nameOnCard = getValue('input[type="text"][placeholder="mr. john deo"]');
-                const creditCardNumber = getValue('input[type="number"]');
-                const expMonth = getValue('input[type="text"][placeholder="january"]');
-                const expYear = getValue('input[type="number"]');
-                const cvv = getValue('input[type="text"][placeholder="1234"]');
+            const requiredFields = [fullName, email, address, city, state, zipCode, nameOnCard, creditCardNumber, expMonth, expYear, cvv];
 
-                const requiredFields = [fullName, email, address, city, state, zipCode, nameOnCard, creditCardNumber, expMonth, expYear, cvv];
+            if (requiredFields.some(field => field === "")) {
+                notification.textContent = "Please enter all required fields";
+                notification.style.color = "red";
+                notification.style.padding = "10px 0 0 200px";
+                notification.style.display = "block";
+                return;
+            }
 
-                if (requiredFields.some(field => field === "")) {
-                    notification.textContent = "Please enter all required fields";
-                    notification.style.color = "red";
-                    notification.style.padding = "10px 0 0 200px";
-                    notification.style.display = "block";
-                    return;
-                }
+            notification.style.display = "inline";
+            notification.style.color = "#12fd50";
+            notification.style.padding = "15px 0 0 0";
 
-                notification.style.display = "inline";
-                notification.style.color = "#12fd50";
-                notification.style.padding = "15px 0 0 250px";
-
-            });
-
-
+        });
     </script>
 
 </div>

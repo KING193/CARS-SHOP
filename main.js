@@ -50,10 +50,10 @@ let logo = document.querySelector('.logo-header')
 window.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(() => {
-        
+
         setTimeout(() => {
             intro.style.top = '-100vh'
-        },2500)
+        }, 2500)
 
     })
 
