@@ -598,6 +598,22 @@ footer .copyright img:hover {
         padding: 1em 0 1em 3.2em;
     }
 
+    #BMW {
+        padding-left: 140px;
+    }
+
+    #Chevrolet {
+        padding-left: 110px;
+    }
+
+    #Ferrari {
+        padding-left: 130px;
+    }
+
+    #Mercedes {
+        padding-left: 130px;
+    }
+
     .home-car .description h3 {
         width: 80%;
     }
@@ -605,6 +621,15 @@ footer .copyright img:hover {
     .star {
         padding-right: 0;
         height: 50%;
+    }
+
+    .home-car .description .D2 a button {
+        padding: 15px 35px;
+        font-size: 1.4em;
+    }
+
+    .buy_star {
+        padding-top: 50px;
     }
 }
 
